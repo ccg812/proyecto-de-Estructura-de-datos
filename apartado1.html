@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icono1.ico">
+    <title>Conceptos Básicos de Estructuras de Datos</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(90deg, #12015c 0%, #87CEFA 100%);
+            font-family: "Century Gothic";
+            color: #000000;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #067a82;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c1958;
+            text-align: center;
+            border-bottom: 3px solid #2c1958;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .data-concept {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .data-concept h2 {
+            color: #28a745;
+            margin-top: 0;
+        }
+
+        .data-concept img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 15px;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .example-code {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto; /* Para código largo */
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin-top: 15px;
+        }
+
+        /* Estilo para el Acordeón (Interacción) */
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+        /* --- FIN ESTILOS CSS --- */
+        /* --- ESTILOS CSS para Iteradores y Variables Indexadas --- */
+.data-concept h2 {
+    color: #007bff; /* Azul vibrante para destacar el título */
+}
+
+.data-concept:nth-child(4) {
+    background-color: #e6f7ff; /* Fondo suave azul para diferenciar */
+    border: 1px solid #b3d7ff;
+}
+
+.data-concept:nth-child(4) .accordion {
+    background-color: #d0eaff;
+    color: #003366;
+}
+
+.data-concept:nth-child(4) .accordion:hover,
+.data-concept:nth-child(4) .active {
+    background-color: #b3d7ff;
+}
+
+.data-concept:nth-child(4) .panel {
+    background-color: #f0f8ff;
+    border-color: #b3d7ff;
+}
+
+.data-concept:nth-child(4) .example-code {
+    background-color: #222;
+    color: #00ffcc;
+    border-left: 5px solid #007bff;
+}
+
+/* --- FIN ESTILOS CSS para Iteradores --- */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Conceptos Fundamentales de Estructuras de Datos </h1>
+        <p>Las estructuras de datos son la base de la informática. Aprende cómo organizar la información de manera eficiente.</p>
+
+        <div class="data-concept">
+            <h2>1. Arrays (Arreglos) </h2>
+            <p>Una colección de elementos (normalmente del mismo tipo) almacenados en posiciones de memoria contiguas. Se accede a ellos mediante un índice.</p>
+
+            <button class="accordion"> Detalles: ¿Por qué son rápidos?</button>
+            <div class="panel">
+                <p>El acceso es de tiempo constante (O(1)) porque la dirección de cualquier elemento puede calcularse directamente a partir de la dirección base y el índice.</p>
+            </div>
+
+            <p><strong>Ejemplo (Python/JavaScript):</strong></p>
+            <pre class="example-code"><code>
+// Array de 5 elementos
+numeros = [10, 20, 30, 40, 50]
+// El elemento '30' está en el índice 2
+primerElemento = numeros[0] 
+            </code></pre>
+
+            <img src="https://usemynotes.com/wp-content/uploads/2021/02/what-are-arrays-in-java.jpg "  alt="Diagrama de Array mostrando índices y elementos en celdas contiguas."  width="300" height="400">
+        </div>
+        
+        <div class="data-concept">
+            <h2>2. Listas Enlazadas (Linked Lists) </h2>
+            <p>Una colección lineal de elementos (llamados nodos) donde cada nodo apunta al siguiente. No requiere memoria contigua.</p>
+            
+            <p><strong>Ventaja:</strong> La inserción y eliminación son muy eficientes, ya que solo hay que reajustar los punteros, no mover todos los elementos.</p>
+            
+            <p><strong>Ejemplo de un Nodo:</strong></p>
+            <pre class="example-code"><code>
+// Un Nodo tiene un valor y una referencia al siguiente
+class Nodo {
+    constructor(valor) {
+        this.valor = valor;
+        this.siguiente = null; // Puntero al próximo nodo
+    }
+}
+            </code></pre>
+            
+            <img src="https://image.slidesharecdn.com/insercinlistasimpleof-091126111841-phpapp01/95/slide-4-1024.jpg" 
+            alt="Diagrama de Lista Enlazada Simple mostrando nodos unidos por flechas." width="300" height="400">
+        </div>
+
+        <div class="data-concept">
+            <h2>3. Pilas (Stacks) y Colas (Queues) </h2>
+            <p>Son estructuras lineales con restricciones en cómo se accede a los datos:</p>
+            <ul>
+                <li><strong>Pila (Stack):</strong> Funciona con el principio "LIFO" (Last In, First Out - Último en Entrar, Primero en Salir). Como una pila de platos.</li>
+                <li><strong>Cola (Queue):</strong> Funciona con el principio "FIFO" (First In, First Out - Primero en Entrar, Primero en Salir). Como la fila de un supermercado.</li>
+            </ul>
+
+            <p><strong>Analogía Interactiva:</strong> ¿Cuál es el último elemento que sale de una "Pila" si insertamos: A, B, C?</p>
+            <div style="padding: 10px; border: 1px dashed #f0ad4e; background-color: #fff8e1; margin-top: 10px;">
+                <p><strong>Respuesta:</strong> ¡C! (Último en entrar, primero en salir).</p>
+            </div>
+            
+            <img src="https://static.wixstatic.com/media/cdbc35_b5b1f6417d134489a0970f7ccb58c0ae~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/cdbc35_b5b1f6417d134489a0970f7ccb58c0ae~mv2.png"
+             alt="Diagrama comparando una pila (stack) y una cola (queue) con sus principios LIFO y FIFO." width="300" height="400">
+        </div>
+
+        <div class="data-concept">
+    <h2>4. Iteradores y Variables Indexadas</h2>
+    <p>Un <strong>iterador</strong> es una herramienta que permite recorrer una estructura de datos elemento por elemento, sin necesidad de conocer su implementación interna. Una <strong>variable indexada</strong> es aquella que accede a elementos mediante un índice, como en los arreglos.</p>
+
+    <button class="accordion">Detalles: ¿Por qué son útiles?</button>
+    <div class="panel">
+        <p>Los iteradores permiten recorrer listas, arreglos o colecciones de forma ordenada y segura. Son esenciales para aplicar operaciones como búsqueda, filtrado o transformación de datos.</p>
+    </div>
+
+    <p><strong>Ejemplo (Python):</strong></p>
+    <pre class="example-code"><code>
+# Usando un iterador implícito con 'for'
+numeros = [10, 20, 30, 40, 50]
+for numero in numeros:
+    print(numero)  # Imprime cada elemento
+
+# Usando índice (variable indexada)
+for i in range(len(numeros)):
+    print(f"Índice {i}: {numeros[i]}")
+    </code></pre>
+
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230426103203/IteratorsinPython.png"
+         alt="Diagrama que muestra cómo un iterador recorre una lista paso a paso." width="300" height="400">
+</div>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            }
+        </script>
+
+    </div>
+
+</body>
+</html>

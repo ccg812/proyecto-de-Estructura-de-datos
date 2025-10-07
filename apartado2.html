@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icono1.ico">
+    <title>Estructura de Datos: Arrays (Arreglos)</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(90deg, #12015c 0%, #87CEFA 100%);
+            font-family: "Century Gothic";
+            color: #000000;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(90deg, #226e02 0%, #87f95d 100%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #000000; /* Rojo/Naranja para impacto */
+            text-align: center;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #007bff; /* Azul para subsecciones */
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+            margin-top: 30px;
+            padding: 5px 10px;
+            background-color: #f7f9fc;
+        }
+
+        .concept-box, .operation-box {
+            background-color: #fcfcfc;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .example-code {
+            background-color: #272822; /* Fondo oscuro tipo editor */
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin-top: 15px;
+        }
+
+        .key-point {
+            font-weight: bold;
+            color: #28a745; /* Verde para destacar */
+        }
+        /* --- FIN ESTILOS CSS --- */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1> Arrays (Arreglos): La Base de las Estructuras de Datos</h1>
+
+        <div class="concept-box">
+            <h2>1. ¿Qué es un Array (Arreglo)? </h2>
+            <p>Un "Array" es una colección de elementos (generalmente del mismo tipo) almacenados en "posiciones de memoria contiguas" (juntas).</p>
+            <p>Es la estructura de datos más básica y utilizada. Piensa en un array como una fila de casilleros numerados, donde cada casillero guarda un valor.</p>
+            
+            <ul>
+                <li><span class="key-point">Homogéneo:</span> En muchos lenguajes (como Java o C++), todos los elementos deben ser del mismo tipo (ej: todos números enteros).</li>
+                <li><span class="key-point">Tamaño Fijo:</span> En la mayoría de implementaciones, el tamaño del array se define al crearlo y no puede cambiar.</li>
+            </ul>
+        </div>
+
+        <div class="image-container">
+             <img src="https://via.placeholder.com/700x200?text=Diagrama+Conceptual+de+Array+(Indices+0-N)" alt="Diagrama de un array con celdas contiguas, mostrando el índice de 0 a N-1.">
+            <p style="margin-top: 10px; font-size: 0.9em;">Ilustración Clave: Cada elemento se accede mediante su "índice", que siempre empieza en "0".</p>
+        </div>
+        
+        <div class="concept-box">
+            <h2>2. Características Fundamentales y Eficiencia </h2>
+            
+            <h3>Acceso Rápido (Acceso Directo)</h3>
+            <p>La característica más poderosa. Podemos acceder a cualquier elemento del array directamente y en tiempo constante, lo que se conoce como complejidad O(1).</p>
+            
+            <h3>Ventajas:</h3>
+            <ul>
+                <li>Velocidad de Lectura: Acceder a un elemento por índice es instantáneo.</li>
+                <li>Simpleza: Son sencillos de implementar y entender.</li>
+            </ul>
+
+            <h3>Desventajas:</h3>
+            <ul>
+                <li>Inserción/Eliminación Lenta: Si insertas o eliminas un elemento en medio, todos los demás deben moverse para mantener la contigüidad, lo que puede ser lento (O(n)).</li>
+                <li>Tamaño Fijo: Redimensionar un array (crear uno nuevo y copiar los datos) es costoso.</li>
+            </ul>
+        </div>
+
+        <div class="operation-box">
+            <h2>3. Operaciones Típicas y Ejemplos de Código </h2>
+
+            <h3>A. Acceso (Lectura)</h3>
+            <p>Obtener el valor de un elemento específico usando su índice.</p>
+            <pre class="example-code"><code>
+// Python
+nombres = ["Ana", "Beto", "Carlos"]
+# Acceder al elemento en el índice 1 (el segundo elemento)
+print(nombres[1]) # Salida: Beto
+            </code></pre>
+
+            <h3>B. Inserción al Final</h3>
+            <p>Agregar un elemento nuevo al final de la colección (solo si hay espacio, o en el caso de listas dinámicas).</p>
+            <pre class="example-code"><code>
+// Java (simplificado)
+int[] edades = new int[4]; // Array de 4 espacios
+edades[0] = 25;
+edades[1] = 30; 
+// Insertar al final
+edades[2] = 45; 
+            </code></pre>
+            
+            <h3>C. Inserción/Eliminación en Medio</h3>
+            <p>Esto requiere mover todos los elementos posteriores. Es la operación más costosa.</p>
+            <pre class="example-code"><code>
+// Pseudocódigo (Para insertar 'X' en el índice 1)
+// 1. Mover elementos del índice N-1 hasta el 1, un espacio a la derecha.
+// 2. Insertar 'X' en el índice 1.
+            </code></pre>
+        </div>
+        
+        <div class="concept-box">
+            <h2>4. Arrays Multidimensionales (Matrices) </h2>
+            <p>Un array puede contener otros arrays. El más común es el array de dos dimensiones, conocido como "matriz", que representa una tabla o cuadrícula (filas y columnas).</p>
+            
+            <p><strong>Ejemplo (Tabla de Datos):</strong></p>
+            <pre class="example-code"><code>
+// Python: matriz 2x3
+matriz = [
+  [1, 2, 3],  // Fila 0
+  [4, 5, 6]   // Fila 1
+]
+# Acceder al elemento en la Fila 1, Columna 0 (el valor 4)
+print(matriz[1][0]) # Salida: 4
+            </code></pre>
+            
+            <div class="image-container">
+                <img src="" alt="Diagrama de un array bidimensional mostrando el acceso con dos índices.">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
